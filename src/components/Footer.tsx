@@ -1,33 +1,47 @@
+'use client'
+
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+
 export default function Footer() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+
   return (
-    <footer className="px-6 py-12 border-t border-slate-800">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-[#0d253d] text-white py-16">
+      <div className="max-w-[1080px] mx-auto px-6">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
+          className="grid md:grid-cols-4 gap-10 mb-12"
+        >
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-2">Freelance-to-Passive Blueprint</h3>
-            <p className="text-slate-400 text-sm">
+            <h3 className="text-xl font-semibold mb-3">Freelance-to-Passive Blueprint</h3>
+            <p className="text-white/60 text-sm leading-relaxed max-w-md">
               The complete system to transform your freelance skills into 5 automated passive income streams.
             </p>
           </div>
           <div>
-            <h4 className="font-bold mb-3">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#benefits" className="hover:text-white transition-colors">Benefits</a></li>
-              <li><a href="#contents" className="hover:text-white transition-colors">Contents</a></li>
+            <h4 className="font-medium mb-4 text-white/80">Quick Links</h4>
+            <ul className="space-y-2.5 text-sm text-white/50">
+              <li><a href="#contents" className="hover:text-white transition-colors">What&apos;s Inside</a></li>
               <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
               <li><a href="#blog" className="hover:text-white transition-colors">Blog</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-3">Support</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="mailto:kliporahq@gmail.com" className="hover:text-white transition-colors">Contact</a></li>
               <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
-        </div>
+          <div>
+            <h4 className="font-medium mb-4 text-white/80">Support</h4>
+            <ul className="space-y-2.5 text-sm text-white/50">
+              <li><a href="mailto:kliporahq@gmail.com" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://payhip.com/b/aSzpH" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Get the Blueprint</a></li>
+            </ul>
+          </div>
+        </motion.div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
           <p>© 2026 TechTalks / KliporaHQ. All rights reserved.</p>
           <p>Passive income is not guaranteed. Results depend on effort and market conditions.</p>
         </div>
