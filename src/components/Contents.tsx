@@ -41,12 +41,12 @@ export default function Contents() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-medium text-[#533afd] uppercase tracking-widest mb-4">What&apos;s Inside</p>
-          <h2 className="text-[32px] md:text-[42px] font-light tracking-[-0.02em] text-[#061b31] mb-5">
+          <p className="text-sm font-medium text-brand uppercase tracking-widest mb-4">What&apos;s Inside</p>
+          <h2 className="text-[32px] md:text-[42px] font-light tracking-[-0.02em] text-navy mb-5">
             80+ Pages Across{' '}
-            <span className="bg-gradient-to-r from-[#533afd] to-[#665efd] bg-clip-text text-transparent font-normal">21 Chapters</span>
+            <span className="bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent font-normal">21 Chapters</span>
           </h2>
-          <p className="text-lg text-[#64748d] max-w-[600px] mx-auto font-light">
+          <p className="text-lg text-slate max-w-[600px] mx-auto font-light">
             Plus 5 bonuses that alone are worth more than the price of this bundle.
           </p>
         </motion.div>
@@ -59,24 +59,23 @@ export default function Contents() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.4, delay: i * 0.03 }}
-              className="flex items-start gap-4 bg-[#f6f9fc] rounded-lg p-5 hover:bg-[#533afd]/5 transition-colors duration-200"
+              className="flex items-start gap-4 bg-surface rounded-lg p-5 hover:bg-brand/5 transition-colors duration-200"
             >
-              <span className="text-sm font-medium text-[#533afd] font-mono mt-0.5 flex-shrink-0">{ch.num}</span>
+              <span className="text-sm font-medium text-brand font-mono mt-0.5 flex-shrink-0">{ch.num}</span>
               <div>
-                <h3 className="font-medium text-[#061b31] text-[15px]">{ch.title}</h3>
-                <p className="text-[#64748d] text-sm mt-0.5">{ch.desc}</p>
+                <h3 className="font-medium text-navy text-[15px]">{ch.title}</h3>
+                <p className="text-slate text-sm mt-0.5">{ch.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bonuses */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-[#1c1e54] to-[#0d253d] rounded-2xl p-10 md:p-12"
+          className="bg-gradient-to-br from-dark-section to-navy-dark rounded-2xl p-10 md:p-12"
         >
           <h3 className="text-2xl font-light text-white mb-8 text-center">🎁 Included Bonuses</h3>
           <div className="grid md:grid-cols-2 gap-6">

@@ -4,19 +4,10 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 export default function Footer() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-50px' })
-
   return (
-    <footer className="bg-[#0d253d] text-white py-16">
+    <footer className="bg-navy-dark text-white py-16">
       <div className="max-w-[1080px] mx-auto px-6">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-4 gap-10 mb-12"
-        >
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
             <h3 className="text-xl font-semibold mb-3">Freelance-to-Passive Blueprint</h3>
             <p className="text-white/60 text-sm leading-relaxed max-w-md">
@@ -39,8 +30,7 @@ export default function Footer() {
               <li><a href="https://payhip.com/b/aSzpH" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Get the Blueprint</a></li>
             </ul>
           </div>
-        </motion.div>
-
+        </div>
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
           <p>© 2026 TechTalks / KliporaHQ. All rights reserved.</p>
           <p>Passive income is not guaranteed. Results depend on effort and market conditions.</p>
